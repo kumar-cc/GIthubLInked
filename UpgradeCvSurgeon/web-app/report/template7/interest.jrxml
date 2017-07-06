@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="interest" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="0" uuid="8775acaa-a231-4d4c-a058-3df1545437bf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="interestListInString" class="java.util.List"/>
+	<field name="title" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement uuid="eb37376b-ad74-41f1-8940-91deaf018164" x="0" y="13" width="220" height="1" forecolor="#1D5294"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d4eb8e96-bc9b-45c1-b1c0-f2fec10ed96e" x="0" y="0" width="355" height="13" forecolor="#1D5294"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVITIES AND INTERESTS
+]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="5ac087c1-3df6-4e2b-9fc6-ed15e5138128" x="19" y="21" width="336" height="10" forecolor="#818181"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{interestListInString}.join(', ')]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="29ccc911-371f-4315-9f8c-fac3dda255c2" x="3" y="21" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

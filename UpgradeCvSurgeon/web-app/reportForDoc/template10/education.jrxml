@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="education" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="5" bottomMargin="0" uuid="184eaedb-c677-46d9-b59b-2f6b8927a96a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Philosopher" isDefault="true" fontName="Philosopher" fontSize="10" isPdfEmbedded="true"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="summary" class="java.lang.String"/>
+	<field name="institutionNameAndLocationAndYear" class="java.lang.String"/>
+	<field name="educationDegreeAndFieldOfStudy" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="65974d70-aac2-4fd6-b49c-d49f03320c7e" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="355" height="20"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/tittleBackground.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="0839ab09-e7c8-43e9-81a5-01c838b0cb5c" x="0" y="0" width="30" height="20"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/section_title_image.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="1930ede2-21a4-4775-a231-05dffb99500e" positionType="FixRelativeToBottom" x="0" y="0" width="355" height="20" forecolor="#C51088"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Education]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3a8bcb1b-b47f-4d5e-8bf0-68f789cde4ae" positionType="Float" x="0" y="27" width="337" height="10" forecolor="#636466"/>
+				<textElement textAlignment="Left" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{summary}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="44234973-290c-48cf-b89c-39bbc390560d" x="0" y="1" width="337" height="1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}!=1]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc" x="163" y="5" width="140" height="12" forecolor="#000000"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{educationDegreeAndFieldOfStudy}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc" x="0" y="5" width="150" height="12" forecolor="#000000"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institutionNameAndLocationAndYear}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

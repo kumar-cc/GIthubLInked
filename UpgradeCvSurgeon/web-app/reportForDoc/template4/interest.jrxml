@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="interest" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="0" uuid="c487712f-6771-4de6-a3c4-cbe08d56ee20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="interests" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="interestListInString" class="java.util.List"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     interest.`title` AS title
+FROM
+     `interest` interest]]>
+	</queryString>
+	<field name="title" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9416ce6c-6850-40d4-a3c6-102d883b9397" positionType="Float" x="0" y="0" width="355" height="12" forecolor="#EA8622" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVITIES AND INTERESTS]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="9a83dee5-a477-4713-b754-103c9cf00dfc" x="0" y="12" width="355" height="1" forecolor="#EA8622"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="5ac087c1-3df6-4e2b-9fc6-ed15e5138128" x="16" y="21" width="337" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{interestListInString}.join(', ')]]></textFieldExpression>
+			</textField>
+			<image scaleImage="RetainShape">
+				<reportElement uuid="29ccc911-371f-4315-9f8c-fac3dda255c2" x="0" y="21" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

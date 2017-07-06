@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="honoursAndAward" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d4963ea5-f66b-49a2-ac63-ce47b6eca43a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     added_language.`language_id` AS language_id,
+     added_language.`rating` AS rating
+FROM
+     `added_language` added_language]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4a694915-b4dc-45ca-9a2a-1394738c47df" x="0" y="0" width="310" height="15" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font fontName="Arial MT" size="10" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[HONOURS AND AWARDS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="84903c77-d9b9-4343-9045-83528c0db48f" x="15" y="2" width="160" height="10" forecolor="#636466"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial MT" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="2afe4361-b1c1-4a3f-afc6-2dd4b5e11401" x="0" y="3" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} +  "/dot_bg.gif"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,9 @@
+resume_type_id,resume_type,resume_price,resume_type_status
+1,"Graduate Resume",70.00,Y
+2,"School leaver",70.00,Y
+3,"Entry level",75.00,Y
+4,"Middle management",105.00,Y
+5,"High management",130.00,Y
+6,Director,160.00,Y
+7,Military,95.00,Y
+8,Generic,95.00,Y

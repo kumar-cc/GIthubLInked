@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="achievement" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" scriptletClass="com.cvsurgeon.RotateTextScriptlet" uuid="26ef7104-4147-4efe-9dce-9c1339cb227f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="achievementInString" class="java.lang.String"/>
+	<parameter name="achievementSummary" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="dateOfAchievement" class="java.lang.String"/>
+	<field name="place" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="6a0bcb3e-2960-4bfb-b98f-7b14944c5524" stretchType="RelativeToBandHeight" x="9" y="0" width="520" height="80"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b1e83819-f4a8-450e-b2fa-4faec9163be8" positionType="Float" mode="Transparent" x="56" y="5" width="451" height="10" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{achievementSummary}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1ec0210e-aa88-4ae5-a65a-b00c045068aa" positionType="Float" x="56" y="20" width="451" height="52" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{achievementInString}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="b8dd8d0b-5b66-4062-baa0-d859373d6dec" positionType="FixRelativeToBottom" x="-4" y="0" width="60" height="86"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/achivement.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

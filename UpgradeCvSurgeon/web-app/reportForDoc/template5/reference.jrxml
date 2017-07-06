@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reference" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="5" bottomMargin="10" uuid="49c17a20-81e3-44a5-a663-54a2cd27062d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     reference.`company` AS reference_company,
+     reference.`email` AS reference_email,
+     reference.`name` AS reference_name,
+     reference.`phone_id` AS reference_phone_id,
+     reference.`reference_available_on_request` AS reference_reference_available_on_request,
+     reference.`title` AS reference_title,
+     reference.`type` AS reference_type
+FROM
+     `reference` reference]]>
+	</queryString>
+	<field name="company" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="phone.number" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="4" y="5" width="163" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REFERENCES
+]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b1f75783-5e47-428f-b082-d424a6a41b16" x="0" y="18" width="300" height="1" backcolor="#B6B6B6"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#B6B6B6"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="40">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="3f2c0344-7492-4788-b28d-2d9da24b2787" x="4" y="7" width="301" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="913597c4-3627-4525-bf75-f934253d4ca1" positionType="Float" x="4" y="19" width="301" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f4fc7033-17f4-4919-846f-316fe9aced05" mode="Transparent" x="305" y="7" width="200" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="812c8ae1-98cc-43a6-9a7d-1a5b54025590" positionType="Float" x="305" y="19" width="200" height="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="872f6943-7185-4ab9-a190-125873f804a2" positionType="Float" x="4" y="30" width="301" height="10"/>
+				<textElement markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>" + "T: " + "</b>" + $F{phone.number} + "<br/>" +  ($F{email} ? "<b>" + "E: " + "</b>" + $F{email} : "")]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="9d2f5fa6-ff23-4412-b545-997805d6d083" x="0" y="3" width="505" height="1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}!=1]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+</jasperReport>

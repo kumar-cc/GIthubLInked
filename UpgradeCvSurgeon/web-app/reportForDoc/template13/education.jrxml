@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="education" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="0" scriptletClass="com.cvsurgeon.RotateTextScriptlet" uuid="e86cae31-7423-4ac0-ba49-e47bfa78cd11">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="totalCountOfElementInList" class="java.lang.Integer"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/jft/workspace/CvSurgeon/CvSurgeon/web-app/report/template13/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="summary" class="java.lang.String"/>
+	<field name="institutionNameAndLocationAndYear" class="java.lang.String"/>
+	<field name="educationDegreeAndFieldOfStudy" class="java.lang.String"/>
+	<variable name="total" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="1a28d054-fd1f-43a9-91a6-0acefea8368b" stretchType="RelativeToBandHeight" x="9" y="-3" width="520" height="49"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="3a8bcb1b-b47f-4d5e-8bf0-68f789cde4ae" positionType="Float" x="57" y="27" width="453" height="10" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{summary}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+				<reportElement uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc" x="247" y="8" width="263" height="12" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{educationDegreeAndFieldOfStudy}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc" x="57" y="8" width="190" height="12" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institutionNameAndLocationAndYear}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="90cedd01-2b42-4009-91dc-d2b4a3c84992" x="80" y="4" width="400" height="1" forecolor="#FFFFFF">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT} !=1]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="6" splitType="Stretch">
+			<frame>
+				<reportElement uuid="38cc5748-9c6b-4810-9dbf-8a7e05dc649d" positionType="FixRelativeToBottom" x="-4" y="-80" width="60" height="86"/>
+				<image>
+					<reportElement uuid="4fe8e69a-3ff9-4f25-92d6-32164a66fa36" x="0" y="0" width="60" height="86"/>
+					<imageExpression><![CDATA[$P{imagePathInSubreport} + "/education.png"]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

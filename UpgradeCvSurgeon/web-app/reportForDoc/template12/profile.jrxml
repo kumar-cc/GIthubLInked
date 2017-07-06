@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="profile" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="5" uuid="2c83ca4d-8c4e-4ebc-bbf4-18a98c8d98f2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Clearly Gothic" isDefault="true" fontName="Clearly Gothic" fontSize="10" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="personalProfile" class="java.lang.String"/>
+	<field name="careerObjective" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="265d0449-c737-440d-9c45-f05f8f390189" x="0" y="0" width="390" height="50"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_bg.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="e176e31b-2780-4e63-b874-57a80b34f025" mode="Transparent" x="35" y="4" width="320" height="38" forecolor="#D2232A"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Profile]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b1e83819-f4a8-450e-b2fa-4faec9163be8" positionType="Float" x="0" y="13" width="355" height="10" forecolor="#626365"/>
+				<textElement markup="html">
+					<font size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{personalProfile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fa7f9ad1-d96f-4716-9b1a-393ef525c608" x="0" y="0" width="355" height="10" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Personal Statement]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b1e83819-f4a8-450e-b2fa-4faec9163be8" positionType="Float" x="0" y="43" width="355" height="10" forecolor="#626365"/>
+				<textElement markup="html">
+					<font fontName="Clearly Gothic" size="8" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{careerObjective}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="fa7f9ad1-d96f-4716-9b1a-393ef525c608" positionType="Float" x="0" y="30" width="355" height="10" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Career Objective]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

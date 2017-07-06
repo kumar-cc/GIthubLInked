@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rightSubReportForDoc" language="groovy" pageWidth="140" pageHeight="842" columnWidth="140" leftMargin="0" rightMargin="0" topMargin="20" bottomMargin="0" uuid="011e8b41-cc17-4bca-a5fa-106f707d8a88">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="BinaryITC TT" fontSize="10" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="displayValue" class="java.lang.String"/>
+	<parameter name="userImagePathInSubReport" class="java.lang.String"/>
+	<parameter name="skillInString" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<title>
+		<band height="180" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="44b6553f-4bac-4847-bc8c-8954c700005a" stretchType="RelativeToTallestObject" x="28" y="113" width="93" height="56" forecolor="#C823EA" backcolor="#C823EA"/>
+			</rectangle>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="d9f1ab47-de30-4b61-b2aa-b1a27cc87c60" mode="Opaque" x="28" y="0" width="93" height="100" forecolor="#DE4B24" backcolor="#C823EA">
+					<printWhenExpression><![CDATA[$P{userImagePathInSubReport} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{userImagePathInSubReport}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6c1d65e1-fbc5-4d44-a56a-edc6ec77706a" positionType="Float" x="31" y="134" width="90" height="24" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{skillInString}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="45dd0dcb-2f14-4790-bebe-b66fe7c059d3" x="31" y="116" width="90" height="13" forecolor="#FFFFFF"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Highlights]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="e5444ae2-3666-4503-9690-474773044b9e" x="17" y="0" width="10" height="100">
+					<printWhenExpression><![CDATA[$P{userImagePathInSubReport} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/leftShadowForProfileImage.gif"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="405c1fb4-41a9-4dd0-a642-77d0105627cf" x="121" y="0" width="10" height="100">
+					<printWhenExpression><![CDATA[$P{userImagePathInSubReport} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/rightShadowForProfileImage.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

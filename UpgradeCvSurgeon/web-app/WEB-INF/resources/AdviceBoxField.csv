@@ -1,0 +1,58 @@
+field_id,resume_section,title
+ph_1,Personal Details,Phone Number
+ph_2,Personal Details,Alternative Phone Number
+web,Personal Details,Website
+cpro,Personal Details,Career Profile
+PDA,Personal Details,Personal Statement
+corec,Cover Letter,Unknown Recipient
+covlay,Cover Letter,Cover Letter Layout
+covtem,Cover Letter,Cover Letter Template
+add,Personal Details,Address
+Email,Personal Details,Email Address
+CO,Personal Details,Career Objective
+JT,Work History,Job Title
+SH,Work History,Job Skills
+wleave,Work History,Leaving Date
+dut,Work History,Description of Duties
+wsum,Work History,Job Summary
+E/D,Education,Degree Level
+field,Education,Field of Study
+eleave,Education,Education - Leaving Date
+med,Education,Multiple Education Level
+SN,Education,Institution Name
+eloc,Education,Location of Institution
+Q/C,Education,Qualification Summary
+SS,Skills,Skill Summary
+skill,Skills,Skills
+HR,Skills,Skills
+reftitle,References,Job Title
+refname,References,Name of Reference
+refcomp,References,Reference Company
+refphone,References,Reference Phone
+refemail,References,Reference Email
+reftype,References,Reference Type
+AS,Achievements,Achievement Summary
+AM,Achievements,Achievement
+awhere,Achievements,Achievement Location
+adate,Achievements,Date of Achievement
+lan,Additional,Languages
+int,Additional,Hobbies and Interests
+prof,Additional,Professional Memberships
+extra,Additional,Extra Sections
+FN,Personal Details,First Name
+LN,Personal Details,Last Name
+postCode,Personal Details,Post Code
+country,Personal Details,Country
+portFolioLink,Personal Details,Portfolio Link
+twitterLink,Personal Details,Twitter Link
+linkedInProfile,Personal Details,LinkedIn Profile
+CN,Work History,Company Name
+CWS,Work History,Company Website
+industry,Work History,Industry
+basis,Work History,Basis
+cmploc,Work History,Location
+wstart,Work History,Joining Date
+estart,Education,Starting Date
+refreq,References,References Available on Request
+certi,Additional,Certification
+hna,Additional,Honours and Awards

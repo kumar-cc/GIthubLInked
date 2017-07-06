@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="education" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" uuid="438eb1b7-1db7-4897-b6c9-9c0d10cf8b78">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="subReportPath" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     education_history.`degree_id` AS degree,
+     education_history.`fields_of_study` AS fieldsOfStudy,
+     education_history.`institution_location` AS institutionLocation,
+     education_history.`institution_name` AS education_history_institution_name,
+     education_history.`leaving_year_month` AS education_history_leaving_year_month,
+     education_history.`start_year_month` AS education_history_start_year_month,
+     education_history.`summary` AS summary
+FROM
+     `education_history` education_history]]>
+	</queryString>
+	<field name="summary" class="java.lang.String"/>
+	<field name="institutionNameAndLocationAndYear" class="java.lang.String"/>
+	<field name="educationDegreeAndFieldOfStudy" class="java.lang.String"/>
+	<title>
+		<band height="28" splitType="Immediate">
+			<frame>
+				<reportElement uuid="d2595b98-0b28-4477-a31a-12fadb8e6140" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="515" height="28" forecolor="#AEBAD5" backcolor="#CFDAF1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="7" y="1" width="234" height="27"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Education]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="42" splitType="Immediate">
+			<frame>
+				<reportElement uuid="e8a973b1-f58e-4b31-80a7-7fc05eef3aa3" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="515" height="42" forecolor="#AEBAD5" backcolor="#FFFFFF"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<line>
+					<reportElement uuid="5f3f99be-7812-4c34-bc8d-897156584da0" x="10" y="0" width="490" height="1">
+						<printWhenExpression><![CDATA[$V{REPORT_COUNT} != 1]]></printWhenExpression>
+					</reportElement>
+					<graphicElement>
+						<pen lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+					<reportElement uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc" x="210" y="9" width="280" height="18" forecolor="#283234"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA[$F{educationDegreeAndFieldOfStudy}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc" x="10" y="9" width="200" height="18" forecolor="#283234"/>
+					<textElement markup="html"/>
+					<textFieldExpression><![CDATA[$F{institutionNameAndLocationAndYear}]]></textFieldExpression>
+				</textField>
+				<subreport>
+					<reportElement uuid="a4c676dc-e108-468c-8a4e-4670fbc26608" positionType="Float" x="10" y="33" width="480" height="5">
+						<printWhenExpression><![CDATA[$F{summary}.length() > 0]]></printWhenExpression>
+					</reportElement>
+					<subreportParameter name="description">
+						<subreportParameterExpression><![CDATA[$F{summary}.replaceAll( "<br/>", "" )]]></subreportParameterExpression>
+					</subreportParameter>
+					<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{subReportPath} + "descriptionForEducation.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Immediate">
+			<frame>
+				<reportElement uuid="317c636a-34d5-4b82-9795-4b71f42c286e" x="0" y="0" width="515" height="0" forecolor="#AEBAD5"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

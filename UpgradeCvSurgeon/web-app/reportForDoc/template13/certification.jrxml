@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certification" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47dfe109-c5db-4ed4-8d95-e11b55633bd7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="certificationInString" class="java.lang.String"/>
+	<summary>
+		<band height="96">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="25c31a32-0ae2-4227-8ad6-afecf687047c" stretchType="RelativeToBandHeight" x="23" y="13" width="520" height="79"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="b3eebd06-9622-49f7-a0b7-793a489fe1f8" positionType="FixRelativeToBottom" x="10" y="10" width="60" height="86"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/honourAndAwards.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="9628bdd0-bc9e-4528-ab7d-c8eaf1dcdabb" x="88" y="24" width="204" height="20" forecolor="#FFFFFF"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA[$P{certificationInString}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

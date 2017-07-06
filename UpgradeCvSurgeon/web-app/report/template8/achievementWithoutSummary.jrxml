@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="achievement" language="groovy" pageWidth="325" pageHeight="842" columnWidth="325" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="5" uuid="74e60d9c-6479-45ae-a13c-302a331dfc5c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="The Mix Light" fontSize="10" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="achievementSummary" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     achievement.`date_of_achievement` AS dateOfAchievement,
+     achievement.`place` AS place,
+     achievement.`title` AS title
+FROM
+     `achievement` achievement]]>
+	</queryString>
+	<field name="dateOfAchievement" class="java.lang.String"/>
+	<field name="place" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="96e301b2-b56e-46b6-aab5-c64829c051f8" x="0" y="0" width="325" height="30" backcolor="#85D8D1"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="537c1f26-fc4c-4439-bbdf-96ed060a9100" x="10" y="4" width="257" height="20" forecolor="#00949D"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Achievements]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="8e1798be-174c-46b0-a671-2448fcbdec9f" positionType="Float" x="108" y="5" width="207" height="12" forecolor="#636466"/>
+				<textElement verticalAlignment="Top">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}+" " + ($F{place} ? "("+$F{place}+")" : "")]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="d69f34e0-6b3d-47bf-98d2-ea3a78b7e526" x="10" y="7" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4531bc02-580b-4089-8579-df5e53b377c0" positionType="Float" x="26" y="5" width="82" height="12" forecolor="#636466"/>
+				<textElement verticalAlignment="Top">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMM yyyy").format(new SimpleDateFormat("yyyy-MM").parse($F{dateOfAchievement}))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

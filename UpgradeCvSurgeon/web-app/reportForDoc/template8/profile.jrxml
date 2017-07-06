@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="profile" language="groovy" pageWidth="325" pageHeight="842" columnWidth="315" leftMargin="10" rightMargin="0" topMargin="10" bottomMargin="5" uuid="18471309-bebb-420b-984c-1aea0c3aef6f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="Trebuchet MS" fontSize="12" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<field name="careerObjective" class="java.lang.String"/>
+	<field name="personalProfile" class="java.lang.String"/>
+	<title>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="96e301b2-b56e-46b6-aab5-c64829c051f8" x="0" y="0" width="315" height="30" backcolor="#85D8D1"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="537c1f26-fc4c-4439-bbdf-96ed060a9100" x="4" y="4" width="305" height="20" forecolor="#00949D"/>
+				<textElement verticalAlignment="Top" rotation="None">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Profile]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="66">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e2363d24-d340-431c-b139-2987201922f4" positionType="Float" x="11" y="51" width="305" height="12" forecolor="#636466"/>
+				<textElement textAlignment="Left" markup="html">
+					<font fontName="Trebuchet MS" size="8" isBold="false" isStrikeThrough="false" pdfEncoding="Cp1252"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{careerObjective}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="ba240f92-0d36-439e-a41e-dd3c4cf9423d" positionType="Float" x="10" y="2" width="164" height="15"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Personal Statement]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ac4ae4cc-d0de-4da2-9e38-23ff31dc928c" positionType="Float" x="11" y="17" width="305" height="12" forecolor="#636466"/>
+				<textElement markup="html">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{personalProfile}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d010c851-e67a-4329-b553-42bc0815e4eb" positionType="Float" x="10" y="36" width="164" height="15"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Career Objective]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ffd320f-e3e1-40c5-b792-279a80eba594" positionType="Float" x="10" y="51" width="1" height="12"/>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2ffd320f-e3e1-40c5-b792-279a80eba594" positionType="Float" x="10" y="17" width="1" height="12"/>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

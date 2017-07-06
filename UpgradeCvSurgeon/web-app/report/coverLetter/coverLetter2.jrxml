@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CL2RightSubReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a59bec7e-9d6e-45a8-8abd-da2fff9c8b4e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2"/>
+	<field name="coverLetterJasperVO.dateCreated" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.recipientTitle" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.recipientLastName" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.recipientFirstName" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.jobTitle" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.companyName" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.city" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.state" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.zip" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.letterTitle" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.letterContent" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.fullName" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.unknownRecipient" class="java.lang.Boolean"/>
+	<field name="coverLetterJasperVO.address" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.email" class="java.lang.String"/>
+	<field name="coverLetterJasperVO.phone" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="477" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="123" width="259" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.state}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1904fff7-0607-406f-9c90-ecf3254cfbc0" positionType="Float" x="214" y="291" width="256" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Enclosed: CV]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" positionType="Float" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="214" y="214" width="341" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement markup="html">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.letterContent}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="91" width="259" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.companyName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="0f1ed4da-85e9-4265-9880-288de5f5065d" x="213" y="174" width="256" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[!$F{coverLetterJasperVO.unknownRecipient}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[To whom it may concern,]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="107" width="259" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.city}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="76" width="259" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.jobTitle}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="60" width="259" height="15" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{coverLetterJasperVO.unknownRecipient}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{coverLetterJasperVO.recipientTitle}?$F{coverLetterJasperVO.recipientTitle}:"")+" "+($F{coverLetterJasperVO.recipientFirstName}?$F{coverLetterJasperVO.recipientFirstName}:"")+" "+($F{coverLetterJasperVO.recipientLastName}?$F{coverLetterJasperVO.recipientLastName}:"")]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="138" width="259" height="15" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.zip}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" x="212" y="19" width="259" height="15"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd MMM yyyy").format(new SimpleDateFormat("yyyy-MM-dd").parse($F{coverLetterJasperVO.dateCreated}))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" positionType="Float" stretchType="RelativeToBandHeight" x="10" y="68" width="189" height="15"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["T:"+" "+$F{coverLetterJasperVO.phone}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f46309bf-cae3-4240-bba7-1cd910fd242d" x="10" y="10" width="189" height="22"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.fullName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" positionType="Float" x="10" y="36" width="189" height="15"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.address}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="f196495a-1100-4ad8-abc4-f11accdee420" positionType="Float" x="10" y="52" width="189" height="15"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["E:"+" "+$F{coverLetterJasperVO.email}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement uuid="fc8e6802-65fa-4840-b685-96b21f9e2d18" positionType="Float" stretchType="RelativeToTallestObject" x="200" y="10" width="1" height="450"/>
+			</line>
+			<textField>
+				<reportElement uuid="dde60ca8-fcb0-42c0-b8ce-57b437d264ce" x="213" y="189" width="255" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{coverLetterJasperVO.unknownRecipient}]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dear"+" "+($F{coverLetterJasperVO.recipientTitle}?$F{coverLetterJasperVO.recipientTitle}:"")+" "+($F{coverLetterJasperVO.recipientFirstName}?$F{coverLetterJasperVO.recipientFirstName}:"")+" "+($F{coverLetterJasperVO.recipientLastName}?$F{coverLetterJasperVO.recipientLastName}:"")+","]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="c2471697-557c-4737-af94-8e99f394e8fc" positionType="Float" x="214" y="267" width="252" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{coverLetterJasperVO.fullName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2749da65-31a0-4c95-bab6-a5c2382060a7" positionType="Float" x="214" y="247" width="252" height="20" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Your Sincerely,]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

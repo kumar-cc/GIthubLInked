@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="workExperience" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="610c8125-1d16-4793-99ae-ee17b3fcda1c">
+	<property name="ireport.zoom" value="1.0000000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     work_description.`description` AS description,
+     work_description.`employment_status` AS employment_status,
+     work_description.`industry_id` AS industry_id,
+     work_description.`job_title` AS job_title,
+     work_description.`leaving_date` AS leaving_date,
+     work_description.`leaving_year_month` AS leaving_year_month,
+     work_description.`personal_detail_id` AS personal_detail_id,
+     work_description.`start_date` AS start_date,
+     work_description.`start_year_month` AS start_year_month,
+     work_description.`summary` AS summary,
+     work_description.`company_id` AS company_id,
+     work_description_skill.`work_description_skills_id` AS work_description_skills_id,
+     work_description_skill.`skill_id` AS skill_id
+FROM
+     `work_description` work_description INNER JOIN `work_description_skill` work_description_skill ON work_description.`id` = work_description_skill.`work_description_skills_id`]]>
+	</queryString>
+	<field name="description" class="java.lang.String"/>
+	<field name="jobTitle" class="java.lang.String"/>
+	<field name="leavingYearMonth" class="java.lang.String"/>
+	<field name="startYearMonth" class="java.lang.String"/>
+	<field name="summary" class="java.lang.String"/>
+	<field name="company" class="java.lang.String"/>
+	<field name="skills" class="java.util.Collection"/>
+	<field name="company.location" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a9bbf4b5-9fcf-44ee-80ad-b03d85f7e522" x="0" y="0" width="310" height="15"/>
+				<textElement>
+					<font fontName="Arial MT" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[WORK EXPERIENCE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<image scaleImage="RetainShape">
+				<reportElement uuid="dad6a588-24e7-41c0-8b72-cac2b93b5404" x="0" y="4" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a083246b-02b8-4d87-a170-a00e55191591" positionType="Float" x="136" y="3" width="192" height="10"/>
+				<textElement verticalAlignment="Top" markup="html">
+					<font fontName="Arial MT" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>"+$F{company} +"</b>"  + ($F{company.location} ? ", " +"<i>" +  $F{company.location} + "</i>" : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a083246b-02b8-4d87-a170-a00e55191591" positionType="Float" x="136" y="18" width="192" height="10"/>
+				<textElement markup="html">
+					<font fontName="Arial MT" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<b>"+$F{jobTitle}+"</b>" + ($F{skills} ? " (" + $F{skills}.join(','+' ') + ")" : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="181dc873-b9b6-43d0-a646-4fb551696919" x="16" y="3" width="120" height="10"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Arial MT" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("MMM yyyy").format(new SimpleDateFormat("yyyy-MM").parse($F{startYearMonth})) +" - "+ ($F{leavingYearMonth}.equals("Present")? ("Present") : (new SimpleDateFormat("MMM yyyy").format(new SimpleDateFormat("yyyy-MM").parse($F{leavingYearMonth}))))]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="51aec714-69e1-46e3-ab2c-2ff3f6c625a1" positionType="Float" x="0" y="0" width="330" height="1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT} != 1]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4c3a1de3-17ab-400a-bb60-d42ed446a15d" positionType="Float" x="2" y="32" width="328" height="10" isRemoveLineWhenBlank="true" forecolor="#636466"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

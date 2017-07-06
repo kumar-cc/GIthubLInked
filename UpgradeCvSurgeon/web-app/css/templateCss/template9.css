@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: mixLight;
+    src: url('TheMix Light Plain.ttf')
+}
+
+@font-face {
+    font-family: mixBold;
+    src: url('TheMixBold-Plain.ttf')
+}
+
+@font-face {
+    font-family: mixSemiBold;
+    src: url('TheMixSemiBold-Plain.ttf')
+}
+
+body, div, p, h1, h2, h3, h4 {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-image: url(../../images/templateImages/template9/footer_bg.gif);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+body {
+    font-family: mixLight;
+    color: #636466;
+    background-image: url(../../images/templateImages/template9/header_bg.gif);
+    background-repeat: no-repeat;
+    background-position: left top;
+
+}
+
+.profileImage {
+
+    width: 227px;
+    height: 227px;
+    background-color: #8cb819;
+    margin-top: 20px;
+    border-radius: 50px;
+    margin-right: -50px;
+    float: right;
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    opacity: .5;
+
+}
+
+.block .subHeading.leftHeading {
+    float: left;
+    width: 50%;
+}
+
+#wrapper {
+
+    padding-top: 40px;
+    padding-bottom: 100px;
+
+}
+
+.test {
+    width: 300px;
+    background-color: green;
+    transform: rotate(7deg);
+    -ms-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+}
+
+#contactInformation {
+    margin-left: 40%;
+}
+
+#contactInformation .name {
+    font-size: 30px;
+    color: #36401e;
+    font-family: mixLight;
+}
+
+#contactInformation .emailAndPhone {
+    font-size: 15px;
+    color: #828385;
+    font-family: mixLight;
+    padding-top: 10px;
+}
+
+#contactInformation .address {
+    font-size: 15px;
+    color: #828385;
+    font-family: mixLight;
+    padding-top: 5px;
+    width: 250px;
+}
+
+#mainContent {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.clearAll {
+    clear: both;
+}
+
+.block {
+    color: #565555;
+    width: 90%;
+}
+
+.block .sectionHeading {
+    color: #95c31b;
+    font-size: 20px;
+
+}
+
+.block .subHeading {
+    margin-top: 10px
+}
+
+.block .content {
+    margin-top: 5px
+
+}
+
+.block .subSectionHeading {
+    float: left;
+    width: 40%;
+
+}
+
+.block .dateTime {
+    float: right;
+    text-align: right;
+    width: 40%;
+
+}
+
+.td {
+    width: 82%;
+
+}
+
+.block.skillList {
+    margin-top: 10px;
+}
+
+.block.skillListLeft {
+    float: left;
+    width: 40%;
+}
+
+.block.skillListRight {
+    float: right;
+    width: 40%;
+}

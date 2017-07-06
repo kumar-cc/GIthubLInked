@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="interest" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" uuid="6b618b5a-b53d-4694-a486-0091f5f5fdd4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="interestListInString" class="java.util.List"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     interest.`title` AS interest_title
+FROM
+     `interest` interest]]>
+	</queryString>
+	<field name="title" class="java.lang.String"/>
+	<title>
+		<band height="58" splitType="Stretch">
+			<frame>
+				<reportElement uuid="e8a973b1-f58e-4b31-80a7-7fc05eef3aa3" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="28" width="515" height="30" forecolor="#AEBAD5"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="230741a6-80cf-4d07-a823-4fa470e32044" positionType="Float" x="7" y="8" width="507" height="15" forecolor="#283234"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$P{interestListInString}.join(', ')]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement uuid="d2595b98-0b28-4477-a31a-12fadb8e6140" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="515" height="28" forecolor="#AEBAD5" backcolor="#CFDAF1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="7" y="7" width="234" height="15"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Activities and Interests]]></text>
+			</staticText>
+		</band>
+	</title>
+	<summary>
+		<band>
+			<frame>
+				<reportElement uuid="317c636a-34d5-4b82-9795-4b71f42c286e" x="0" y="0" width="515" height="0" forecolor="#AEBAD5"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certification" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="5" uuid="bbac4c48-a19a-45da-8830-e56028237acf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9b9552b1-1ce8-4800-91c5-dd416e8716c2" x="113" y="4" width="300" height="16" forecolor="#96C31D"/>
+				<textElement>
+					<font fontName="Trebuchet MS" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Certification]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement uuid="45b0de0a-a95d-4368-b9be-a9517527df22" x="0" y="7" width="113" height="11"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_image.gif"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<detail>
+		<band height="13">
+			<image scaleImage="RetainShape">
+				<reportElement uuid="eee3b0b3-a3b6-4c2b-964a-30296396be62" x="113" y="2" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="22ea811b-526d-4923-b867-982c685650b0" x="121" y="0" width="292" height="13"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

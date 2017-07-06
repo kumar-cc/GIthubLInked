@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="referenceOnRequest" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="85bdfe6c-0c25-4542-92d8-f4c2298e710b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<title>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b9060500-9065-4a28-b5ee-418ff02b7152" x="0" y="0" width="380" height="20"/>
+				<textElement>
+					<font fontName="Arial MT" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[References]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ba0cb24f-a63b-4cdb-ae53-a69cece9cbc3" x="0" y="27" width="555" height="10" forecolor="#555453"/>
+				<textElement>
+					<font fontName="Arial MT" size="8" isBold="false" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[References Available on Request]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

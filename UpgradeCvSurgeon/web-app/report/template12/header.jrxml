@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="04b8fe09-e87a-4156-bab5-0d2fcc894d66">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Clearly Gothic" isDefault="true" fontName="Clearly Gothic" fontSize="10" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="userImagePathInSubReport" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="website" class="java.lang.String"/>
+	<parameter name="phone1" class="java.lang.String"/>
+	<parameter name="phone2" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<field name="fullName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="250" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="9869f024-5574-4ea6-821d-548c13371c85" x="0" y="0" width="313" height="246"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/nameBgImage.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1b73f5b8-f67c-4798-aa29-86ac9f618680" x="8" y="17" width="218" height="28" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7a33d98f-3593-4da5-964e-313476fc5c88" positionType="Float" x="8" y="64" width="185" height="10" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7a33d98f-3593-4da5-964e-313476fc5c88" positionType="Float" x="8" y="74" width="158" height="10" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phone1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7a33d98f-3593-4da5-964e-313476fc5c88" positionType="Float" x="8" y="54" width="185" height="10" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{website}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7a33d98f-3593-4da5-964e-313476fc5c88" positionType="Float" x="8" y="84" width="158" height="10" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phone2}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="14e0da03-24d8-405e-80ac-d707bb4bcdd6" style="Clearly Gothic" x="356" y="17" width="212" height="117" isRemoveLineWhenBlank="true"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="90023768-3b40-46c2-91aa-93686eebe23d" positionType="Float" x="0" y="0" width="116" height="70"/>
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+				</textField>
+				<image scaleImage="FillFrame">
+					<reportElement uuid="df4792cd-b1eb-447b-a6e0-467ffe91337b" x="117" y="0" width="93" height="100" isRemoveLineWhenBlank="true"/>
+					<imageExpression><![CDATA[$P{userImagePathInSubReport}]]></imageExpression>
+				</image>
+			</frame>
+		</band>
+	</title>
+</jasperReport>

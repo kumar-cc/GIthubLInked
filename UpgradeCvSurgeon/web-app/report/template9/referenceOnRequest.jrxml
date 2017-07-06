@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="referenceOnRequest" language="groovy" pageWidth="555" pageHeight="842" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="7e4c934d-5551-4d5a-8925-de5a187faaad">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<title>
+		<band height="43">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement uuid="9a7c858a-b2ef-4128-b136-c9646f4baecd" x="0" y="0" width="113" height="11"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_image.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="f85ed8ea-28c6-4f8f-8fd3-a036ee7156b1" x="113" y="0" width="300" height="16" forecolor="#96C31D"/>
+				<textElement>
+					<font size="10" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Reference]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f1f724aa-9261-4432-92f3-9bb90857dfb7" x="113" y="23" width="300" height="13"/>
+				<textElement>
+					<font fontName="The Mix Light" size="8" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[References Available on Request]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

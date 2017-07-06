@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="skill2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="0" scriptletClass="com.cvsurgeon.RotateTextScriptlet" uuid="7ca967ec-2d35-464d-b2bf-caaadbd1d1a0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="skillInString" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="skillRatingAsStar" class="java.lang.String"/>
+	<parameter name="skillSummary" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="hideRatingFromResume" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="18">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="25c31a32-0ae2-4227-8ad6-afecf687047c" stretchType="RelativeToBandHeight" x="9" y="0" width="520" height="18"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4148cfa8-eaad-40f0-8f3f-1a1520881d22" x="56" y="4" width="440" height="10" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{skillSummary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="12">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="25c31a32-0ae2-4227-8ad6-afecf687047c" stretchType="RelativeToTallestObject" x="9" y="-1" width="520" height="13"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e0f80484-a557-41cf-b961-8880eb455c1b" positionType="Float" x="56" y="1" width="300" height="10" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="360" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[$F{hideRatingFromResume} == false]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="392" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[($F{rate} == "Intermediate" || $F{rate} == "Advanced" || $F{rate} == "Fluent") && ($F{hideRatingFromResume} == false)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="408" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[($F{rate} == "Advanced" || $F{rate} == "Fluent") && ($F{hideRatingFromResume} == false)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="376" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[($F{rate} == "Improver" || $F{rate} == "Intermediate" || $F{rate} == "Advanced" || $F{rate} == "Fluent") && ($F{hideRatingFromResume} == false)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="424" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[$F{rate} == "Fluent" && $F{hideRatingFromResume} == false]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<summary>
+		<band height="44" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="25c31a32-0ae2-4227-8ad6-afecf687047c" stretchType="RelativeToTallestObject" x="9" y="-1" width="520" height="40"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="7c9c05b9-f1f0-466f-ae05-a7cd80a09e02" positionType="FixRelativeToBottom" x="-4" y="-42" width="60" height="86"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/skills.png"]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

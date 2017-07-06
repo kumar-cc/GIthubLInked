@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="referenceOnRequest" language="groovy" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="5" bottomMargin="0" uuid="aabc9e61-ba31-40bd-994f-a72e402cd941">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<title>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="4" y="5" width="163" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REFERENCES
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d16ce46-57d7-47f0-aa7e-ce0e16e12a3d" x="4" y="28" width="397" height="10"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<text><![CDATA[References Available on Request]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b1f75783-5e47-428f-b082-d424a6a41b16" x="0" y="18" width="280" height="1" backcolor="#B6B6B6"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#B6B6B6"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+</jasperReport>

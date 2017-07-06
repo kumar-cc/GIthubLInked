@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rightSubreportForDoc" language="groovy" pageWidth="250" pageHeight="842" columnWidth="250" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4d44ec67-9def-48ba-a61d-320f992338d1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="Trebuchet MS" fontSize="12" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="userImagePathInSubReport" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="phone" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="website" class="java.lang.String"/>
+	<parameter name="hideAllReferences" class="java.lang.Boolean"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="phone.number" class="java.lang.String"/>
+	<title>
+		<band height="265" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="96e301b2-b56e-46b6-aab5-c64829c051f8" positionType="Float" x="0" y="235" width="167" height="30" backcolor="#85D8D1"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<image hAlign="Center">
+				<reportElement uuid="2d4dc630-3778-4694-a23c-7171874e1699" x="70" y="34" width="99" height="113" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA[$P{userImagePathInSubReport}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="537c1f26-fc4c-4439-bbdf-96ed060a9100" x="5" y="181" width="160" height="20" forecolor="#00949D"/>
+				<textElement textAlignment="Right">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="8c611713-8afa-4e3c-b46b-940f2d4e51c0" positionType="Float" stretchType="RelativeToBandHeight" x="5" y="211" width="160" height="12" forecolor="#636466"/>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{phone} + "<br/>" + $P{email} + (($P{website} != null)? "<br/>" + $P{website} : "") + "<br/><b>Address</b><br/>" + $P{address}.replaceAll( "\n", "<br/" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="537c1f26-fc4c-4439-bbdf-96ed060a9100" positionType="Float" x="5" y="240" width="160" height="20" forecolor="#00949D"/>
+				<textElement textAlignment="Right">
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[References]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b97b923c-fca8-4d52-bc97-914604ca59d7" x="166" y="185" width="0" height="16"/>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0ff20304-2015-4851-8bd7-e16ec3aa7362" x="166" y="213" width="0" height="8"/>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="53" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{hideAllReferences} == false]]></printWhenExpression>
+			<rectangle>
+				<reportElement uuid="bc01937e-fe31-4f25-a0b3-be7b2df4275d" positionType="Float" x="1" y="0" width="165" height="53" backcolor="#D1ECE7"/>
+				<graphicElement>
+					<pen lineColor="#D1ECE7"/>
+				</graphicElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a2c17d63-90c5-4bea-a21c-ad58f2862f40" positionType="Float" x="5" y="33" width="157" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email} + "\n"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6835b126-8e1c-4644-932f-09efa8b5e05d" positionType="Float" x="5" y="21" width="157" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone.number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a46ac65c-2630-48ae-8747-0ca9aa5c8311" positionType="Float" x="5" y="9" width="157" height="12"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="801eca8b-5258-4224-bfba-efbf812709dc" x="5" y="0" width="160" height="1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}!=1]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="22">
+			<printWhenExpression><![CDATA[$P{hideAllReferences} == true]]></printWhenExpression>
+			<rectangle>
+				<reportElement uuid="bc01937e-fe31-4f25-a0b3-be7b2df4275d" positionType="Float" stretchType="RelativeToBandHeight" x="1" y="0" width="165" height="22" backcolor="#D1ECE7"/>
+				<graphicElement>
+					<pen lineColor="#D1ECE7"/>
+				</graphicElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4b199cde-003e-4ed8-87f6-8bead925d473" x="5" y="2" width="157" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["References Available on Request" + "\n\n"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

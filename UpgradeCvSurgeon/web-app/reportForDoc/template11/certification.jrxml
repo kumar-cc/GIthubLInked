@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="certification" language="groovy" pageWidth="395" pageHeight="842" columnWidth="375" leftMargin="20" rightMargin="0" topMargin="5" bottomMargin="0" uuid="9ef6aa48-8470-4bc2-837e-c5ec52379e63">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="13" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e95eaca7-fb0b-40ae-84d2-24fd8ce9067c" x="0" y="0" width="355" height="13" forecolor="#D84BFB"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="10" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Certification]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15">
+			<image>
+				<reportElement uuid="2afe4361-b1c1-4a3f-afc6-2dd4b5e11401" x="3" y="3" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="84903c77-d9b9-4343-9045-83528c0db48f" x="18" y="2" width="337" height="10" forecolor="#636466"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

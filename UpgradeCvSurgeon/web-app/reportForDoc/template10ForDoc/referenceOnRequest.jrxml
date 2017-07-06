@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="referenceOnRequest" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="5" bottomMargin="0" uuid="887949f0-55ab-49ca-92de-89622e4306d2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<title>
+		<band height="41" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="8d15f454-07cc-42ea-ac42-4365ec7fb62b" mode="Opaque" x="0" y="0" width="355" height="20" forecolor="#EDBCD7" backcolor="#EDBCD7"/>
+			</rectangle>
+			<image>
+				<reportElement uuid="0839ab09-e7c8-43e9-81a5-01c838b0cb5c" x="0" y="0" width="30" height="20"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/section_title_image.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="1930ede2-21a4-4775-a231-05dffb99500e" positionType="FixRelativeToBottom" x="0" y="0" width="355" height="20" forecolor="#C51088"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="15" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Reference]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f54d0574-3adb-476e-b083-1ca3c26addaa" x="0" y="25" width="354" height="10"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<text><![CDATA[References Available on Request]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

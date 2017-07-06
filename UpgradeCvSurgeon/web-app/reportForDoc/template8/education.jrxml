@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="education" language="groovy" pageWidth="325" pageHeight="842" columnWidth="315" leftMargin="10" rightMargin="0" topMargin="10" bottomMargin="5" uuid="2ddd5d8f-10c0-44eb-9ca1-7433628c8f97">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="Trebuchet MS" fontSize="10" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<field name="summary" class="java.lang.String"/>
+	<field name="institutionNameAndLocationAndYear" class="java.lang.String"/>
+	<field name="educationDegreeAndFieldOfStudy" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="315" height="30" backcolor="#85D8D1" uuid="96e301b2-b56e-46b6-aab5-c64829c051f8"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="10" y="5" width="172" height="20" forecolor="#00949D" uuid="537c1f26-fc4c-4439-bbdf-96ed060a9100"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Education]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<line>
+				<reportElement x="12" y="8" width="260" height="1" uuid="a6d4a5b8-1cea-44ea-8cdf-db2cdaa0a438">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}!=1]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="162" y="9" width="153" height="12" forecolor="#283234" uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc"/>
+				<textElement markup="html">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{educationDegreeAndFieldOfStudy}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="10" y="9" width="152" height="12" forecolor="#283234" uuid="feee34a1-7f21-47e7-8bfd-c2b96e1662cc"/>
+				<textElement markup="html">
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institutionNameAndLocationAndYear}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="21" width="301" height="15" uuid="c1d9f30a-04ee-41e2-acf3-88cc6b236216"/>
+				<textElement markup="html">
+					<font fontName="Trebuchet MS" size="8"/>
+					<paragraph tabStopWidth="300"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{summary}.replaceAll( "<br/>", "" )]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="10" y="21" width="1" height="12" uuid="2ffd320f-e3e1-40c5-b792-279a80eba594"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="311" y="21" width="1" height="12" uuid="33f5b3f5-a87d-45e8-a47d-e1ae6f8450c5"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

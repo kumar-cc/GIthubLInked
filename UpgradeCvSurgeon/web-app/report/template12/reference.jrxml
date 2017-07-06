@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reference" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="0" bottomMargin="5" uuid="fdb2a8f3-3488-42ad-b2ae-16418a287d42">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Clearly Gothic" isDefault="true" fontName="Clearly Gothic" fontSize="10" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="company" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="phone.number" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="265d0449-c737-440d-9c45-f05f8f390189" x="0" y="0" width="390" height="50"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_bg.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="e176e31b-2780-4e63-b874-57a80b34f025" x="35" y="3" width="299" height="39" forecolor="#D2232A"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[References]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a2c17d63-90c5-4bea-a21c-ad58f2862f40" positionType="Float" x="17" y="36" width="230" height="10" forecolor="#626365">
+					<printWhenExpression><![CDATA[$F{phone.number} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a46ac65c-2630-48ae-8747-0ca9aa5c8311" positionType="Float" x="17" y="7" width="170" height="10" forecolor="#000000"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="90a1ce47-200f-4ff2-abe4-7e70150df00c" positionType="Float" x="250" y="36" width="81" height="10" forecolor="#626365"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6fa171fb-9ef9-43a8-b2be-81820cf9f4c1" positionType="Float" x="190" y="7" width="144" height="10" forecolor="#000000"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="75242911-33b2-4860-b440-2cbf2b266e8d" positionType="Float" x="190" y="22" width="141" height="10" forecolor="#626365"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="827375d9-f9df-41e3-ba8e-c78026ecea9e" x="2" y="36" width="15" height="10">
+					<printWhenExpression><![CDATA[$F{email} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/mail_2.gif"]]></imageExpression>
+			</image>
+			<image vAlign="Middle">
+				<reportElement uuid="d7b617b8-0d98-463f-b9bd-a973c450103f" x="2" y="22" width="15" height="10">
+					<printWhenExpression><![CDATA[$F{phone.number} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/phone_2.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="6835b126-8e1c-4644-932f-09efa8b5e05d" positionType="Float" x="17" y="22" width="170" height="10" forecolor="#626365">
+					<printWhenExpression><![CDATA[$F{phone.number} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone.number}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="405b72a1-0968-4cb2-8034-255584749efc" x="0" y="0" width="275" height="1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}!=1]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<image>
+				<reportElement uuid="ceb89c29-001a-4f43-b1f2-05bcd6c16499" x="2" y="8" width="8" height="9">
+					<printWhenExpression><![CDATA[$F{email} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="descriptionForWorkExperience" language="groovy" pageWidth="595" pageHeight="842" columnWidth="575" leftMargin="0" rightMargin="20" topMargin="0" bottomMargin="0" uuid="40714bc0-79ca-4cf6-8894-4343e7fffcea">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="Trebuchet MS" fontSize="12" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="15" splitType="Prevent">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9206a8ee-5451-4b88-b1f4-1f3889049e57" positionType="Float" x="0" y="0" width="300" height="15" isRemoveLineWhenBlank="true" forecolor="#000000"/>
+				<textElement markup="html">
+					<font size="8"/>
+					<paragraph spacingAfter="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<span style=\"padding-bottom:20px;\">" + $P{description} + "</span>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1945e7fd-6895-4eb4-938d-9bca069d6bf5" positionType="Float" x="0" y="0" width="1" height="12"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

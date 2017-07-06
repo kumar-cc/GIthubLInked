@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="showReferences" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6a71ed2e-1f51-455f-94dc-1eb83f5d670c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="The Mix Light" fontSize="12" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="company" class="java.lang.String"/>
+	<field name="phone.number" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="type" class="java.lang.Enum"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="16">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement uuid="9a7c858a-b2ef-4128-b136-c9646f4baecd" x="0" y="0" width="113" height="11"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_image.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="f85ed8ea-28c6-4f8f-8fd3-a036ee7156b1" x="113" y="0" width="300" height="16" forecolor="#96C31D"/>
+				<textElement>
+					<font size="10" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[References]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="1a13523a-c298-4587-8a17-58752a9cdbbc" positionType="Float" x="113" y="6" width="204" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="545f6576-5bce-425f-8d88-fda804be53fc" positionType="Float" x="317" y="8" width="96" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e4d783f2-8b2d-438b-8e67-4e15cf7f588f" positionType="Float" x="307" y="21" width="106" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="ef8bcd59-1a4d-4e9e-9479-e411ed15bcdb" x="113" y="24" width="19" height="13"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/phone_icon.gif"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="00796ae2-12e8-488b-b224-1a7e39e30920" x="113" y="37" width="19" height="13">
+					<printWhenExpression><![CDATA[$F{email} != null]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/message_icon.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="c47344c7-b8c7-4817-b7d8-cc63277a9218" positionType="Float" x="132" y="21" width="175" height="13"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $F{phone.number}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="59d7c78c-889e-4ca8-830f-9dee9f3adf01" positionType="Float" x="132" y="37" width="175" height="13"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $F{email}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="4240c334-1e16-40a4-a31a-0b2585753d7d" x="111" y="0" width="313" height="1">
+					<printWhenExpression><![CDATA[$V{REPORT_COUNT}!=1]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement uuid="fbf7a0ce-82d9-425f-9b1c-1693987cb091" positionType="Float" x="307" y="37" width="106" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

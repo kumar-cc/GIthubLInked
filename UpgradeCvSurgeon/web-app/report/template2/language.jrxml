@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="language" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="a2a0b573-6748-43f9-a3c0-eabc3a85ed02">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Philosopher" isDefault="true" fontName="Arial MT" fontSize="10" isBold="true" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[SELECT
+     added_language.`language_id` AS language_id,
+     added_language.`rating` AS rating,
+     added_language.`resume_id` AS resume_id,
+     added_language.`personal_detail_id` AS personal_detail_id
+FROM
+     `added_language` added_language]]>
+	</queryString>
+	<field name="language.name" class="java.lang.String"/>
+	<field name="rating" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="313bf81a-d371-4cea-8eb5-a8fca5f58e38" x="0" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Languages]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="88ce63d4-943c-4e88-8fb2-58548220b77f" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="144" height="10" forecolor="#555453"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{language.name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="8bb2444b-cde1-4464-973e-6136d4315e91" positionType="Float" stretchType="RelativeToBandHeight" x="144" y="0" width="96" height="10" forecolor="#555453"/>
+				<textElement>
+					<font size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["("+$F{rating}+")"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" uuid="6b098ce4-9b46-44d2-bd51-12c5cf200bc9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="phone1" class="java.lang.String"/>
+	<parameter name="userImagePathInSubReport" class="java.lang.String"/>
+	<parameter name="firstName" class="java.lang.String"/>
+	<parameter name="lastName" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="phone2" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     personal_detail.`email` AS personal_detail_email,
+     personal_detail.`first_name` AS personal_detail_first_name,
+     personal_detail.`last_name` AS personal_detail_last_name,
+     personal_detail.`phone1_id` AS personal_detail_phone1_id,
+     personal_detail.`phone2_id` AS personal_detail_phone2_id,
+     resume.`career_profile` AS resume_career_profile,
+     resume.`website` AS resume_website
+FROM
+     `personal_detail` personal_detail,
+     `resume` resume]]>
+	</queryString>
+	<field name="careerProfile" class="java.lang.String"/>
+	<field name="website" class="java.lang.String"/>
+	<title>
+		<band height="70" splitType="Stretch">
+			<frame>
+				<reportElement uuid="1bb14c3c-80f2-4586-8f23-3cc7670d5e08" x="0" y="0" width="515" height="69"/>
+				<image hAlign="Right" isUsingCache="true">
+					<reportElement uuid="1fedbec8-731c-456b-99ef-7477ca2cd933" x="450" y="0" width="60" height="65" isRemoveLineWhenBlank="true">
+						<printWhenExpression><![CDATA[$P{imagePathInSubreport}!=null]]></printWhenExpression>
+					</reportElement>
+					<imageExpression><![CDATA[$P{userImagePathInSubReport}]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+					<reportElement uuid="817d2aac-238a-4204-bc71-1f3f2b064f45" positionType="Float" x="0" y="40" width="444" height="25" forecolor="#303234" backcolor="#FFFFFF"/>
+					<textElement markup="html">
+						<font fontName="Arial" size="21"/>
+					</textElement>
+					<textFieldExpression><![CDATA["<html><font color=\"#303234\">" + $P{firstName}.toLowerCase() + "</font><font color=\"#f42d2d\">" + $P{lastName}.toLowerCase() + "</font></html>"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="51">
+			<line>
+				<reportElement uuid="d36d8c17-283c-43c6-8bb3-89b77171c981" x="0" y="2" width="515" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#F42D2D"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="d36d8c17-283c-43c6-8bb3-89b77171c981" x="0" y="0" width="515" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.25" lineColor="#303234"/>
+				</graphicElement>
+			</line>
+			<ellipse>
+				<reportElement uuid="50c3e594-025a-4789-a602-9a9802d93d69" x="-3" y="22" width="3" height="3" backcolor="#F42D2D">
+					<printWhenExpression><![CDATA[!$P{phone1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="#000000"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement uuid="50c3e594-025a-4789-a602-9a9802d93d69" x="108" y="30" width="3" height="3" backcolor="#F42D2D">
+					<printWhenExpression><![CDATA[!$P{email}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="#000000"/>
+				</graphicElement>
+			</ellipse>
+			<ellipse>
+				<reportElement uuid="50c3e594-025a-4789-a602-9a9802d93d69" x="308" y="30" width="3" height="3" backcolor="#F42D2D">
+					<printWhenExpression><![CDATA[!$F{website}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="#000000"/>
+				</graphicElement>
+			</ellipse>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="817d2aac-238a-4204-bc71-1f3f2b064f45" positionType="Float" x="117" y="25" width="186" height="15" forecolor="#F42D2D">
+					<printWhenExpression><![CDATA[!$P{email}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Email: " + $P{email}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="817d2aac-238a-4204-bc71-1f3f2b064f45" positionType="Float" x="4" y="25" width="98" height="25" isRemoveLineWhenBlank="true" forecolor="#F42D2D">
+					<printWhenExpression><![CDATA[!$P{phone1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tel: " + $P{phone1} + ($P{phone2} ?"\n"+ "Tel: " + $P{phone2} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="817d2aac-238a-4204-bc71-1f3f2b064f45" positionType="Float" x="316" y="25" width="184" height="15" forecolor="#F42D2D">
+					<printWhenExpression><![CDATA[!$F{website}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Website: " + $F{website}.split( "://" ).last()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="817d2aac-238a-4204-bc71-1f3f2b064f45" positionType="Float" x="45" y="10" width="465" height="15" forecolor="#818181"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}.replaceAll( "\n", " " )]]></textFieldExpression>
+			</textField>
+			<ellipse>
+				<reportElement uuid="50c3e594-025a-4789-a602-9a9802d93d69" x="-3" y="10" width="3" height="3" backcolor="#818181"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="#000000"/>
+				</graphicElement>
+			</ellipse>
+			<staticText>
+				<reportElement uuid="64aef742-3d46-462f-a300-13b311da3328" x="4" y="10" width="41" height="15" forecolor="#818181"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Address:]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

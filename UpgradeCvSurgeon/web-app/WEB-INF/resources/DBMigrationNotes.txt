@@ -1,0 +1,1 @@
+1) A user can either mention a name for the place of achievement in Achievements or he/she can associate the place with a WorkHistory(WorkDescription). Presently, the legacy DB does it by saving the jobTitle(String) of the WorkDescription in the achievement. We have changed it by associating the associating the WorkDescription with the achievement. 

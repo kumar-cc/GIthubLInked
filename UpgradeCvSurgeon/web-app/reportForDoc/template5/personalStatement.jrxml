@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="personalStatement" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="28978c67-965c-4bee-b620-3db5358f0715">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     resume.`personal_profile` AS personalProfile
+FROM
+     `resume` resume]]>
+	</queryString>
+	<field name="personalProfile" class="java.lang.String"/>
+	<title>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="4" y="10" width="341" height="13"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PERSONAL STATEMENT
+]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="b1f75783-5e47-428f-b082-d424a6a41b16" x="0" y="23" width="280" height="1" backcolor="#B6B6B6"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#B6B6B6"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="20">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="7b56ace2-c28d-4830-a33c-ec7f52807337" positionType="Float" stretchType="RelativeToBandHeight" x="4" y="5" width="501" height="15"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{personalProfile}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

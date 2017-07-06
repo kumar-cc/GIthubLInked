@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="honoursAndAward" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4e56e55b-fb6e-4024-bf0f-1a77eda0d781">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Philosopher" isDefault="true" fontName="Arial MT" fontSize="10" isBold="true" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[SELECT
+     added_language.`language_id` AS language_id,
+     added_language.`rating` AS rating,
+     added_language.`resume_id` AS resume_id,
+     added_language.`personal_detail_id` AS personal_detail_id
+FROM
+     `added_language` added_language]]>
+	</queryString>
+	<field name="name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="313bf81a-d371-4cea-8eb5-a8fca5f58e38" x="0" y="0" width="385" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Honours And Awards]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="88ce63d4-943c-4e88-8fb2-58548220b77f" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="385" height="10" forecolor="#555453"/>
+				<textElement>
+					<font fontName="Arial" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

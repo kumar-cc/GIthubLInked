@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="interest" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="5" bottomMargin="10" uuid="6b618b5a-b53d-4694-a486-0091f5f5fdd4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="interestListInString" class="java.util.List"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     interest.`title` AS interest_title
+FROM
+     `interest` interest]]>
+	</queryString>
+	<field name="title" class="java.lang.String"/>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="4" y="5" width="320" height="13"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTIVITIES AND INTERESTS]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="3737f34b-ae6b-4138-9922-d9ed935a3e51" x="3" y="28" width="10" height="8"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="230741a6-80cf-4d07-a823-4fa470e32044" positionType="Float" x="20" y="28" width="480" height="10"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{interestListInString}.join(', ')]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="b1f75783-5e47-428f-b082-d424a6a41b16" x="0" y="18" width="280" height="1" backcolor="#B6B6B6"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#B6B6B6"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+</jasperReport>

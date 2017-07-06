@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="professionalMembership" language="groovy" pageWidth="515" pageHeight="845" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" uuid="6c7b6c50-9921-4b6e-b498-edf45a2a4bbd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     professional_membership.`description` AS professional_membership_description,
+     professional_membership.`organization_name` AS professional_membership_organization_name
+FROM
+     `professional_membership` professional_membership]]>
+	</queryString>
+	<field name="description" class="java.lang.String"/>
+	<field name="organizationName" class="java.lang.String"/>
+	<title>
+		<band height="28" splitType="Stretch">
+			<frame>
+				<reportElement uuid="d2595b98-0b28-4477-a31a-12fadb8e6140" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="515" height="28" forecolor="#AEBAD5" backcolor="#CFDAF1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+			<staticText>
+				<reportElement uuid="70a6f2bb-d222-47e9-abce-35ba5b18c1ff" x="7" y="7" width="234" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Professional Memberships]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="29">
+			<frame>
+				<reportElement uuid="e8a973b1-f58e-4b31-80a7-7fc05eef3aa3" positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="515" height="29" forecolor="#AEBAD5"/>
+				<box>
+					<leftPen lineWidth="1.0" lineStyle="Solid"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<image>
+					<reportElement uuid="3737f34b-ae6b-4138-9922-d9ed935a3e51" x="7" y="12" width="8" height="9"/>
+					<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="230741a6-80cf-4d07-a823-4fa470e32044" positionType="Float" x="23" y="11" width="222" height="13" forecolor="#283234"/>
+					<textElement>
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{organizationName}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement uuid="f7a79f48-7cb6-4fb8-adfd-d51da746568f" positionType="Float" x="245" y="11" width="255" height="13" forecolor="#283234"/>
+					<textElement markup="html">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<summary>
+		<band height="1">
+			<line>
+				<reportElement uuid="cc69ab22-bcfb-4ff2-8a58-ead310334d16" x="0" y="0" width="515" height="1" forecolor="#AEBAD5" backcolor="#CFDAF1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="showProfessionalMembership" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cd9db9b6-8598-42fe-b403-635250cdb0d1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="Trebuchet MS" fontSize="12" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="description" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="subReportPath" class="java.lang.String"/>
+	<field name="organizationName" class="java.lang.String"/>
+	<field name="description" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="21">
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement uuid="fb7a4016-d1d6-457d-beea-8e9d336bbba3" x="0" y="5" width="113" height="11"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_image.gif"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="f35ba29a-78cf-4ea4-bdd5-34fede50d6e4" x="113" y="4" width="300" height="16" forecolor="#96C31D"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Professional Memberships]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="2">
+			<subreport>
+				<reportElement uuid="7f361f3a-83ee-468b-8134-46b9944ec9e0" x="113" y="0" width="300" height="1"/>
+				<subreportParameter name="imagePathInSubreport">
+					<subreportParameterExpression><![CDATA[$P{imagePathInSubreport}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="organizationName">
+					<subreportParameterExpression><![CDATA[$F{organizationName}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="description">
+					<subreportParameterExpression><![CDATA[$F{description}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource()]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subReportPath} + "descriptionForProfessionalMembership.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

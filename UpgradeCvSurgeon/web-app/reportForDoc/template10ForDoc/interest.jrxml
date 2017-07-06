@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="interest" language="groovy" pageWidth="410" pageHeight="842" columnWidth="370" leftMargin="20" rightMargin="20" topMargin="5" bottomMargin="0" uuid="0d868744-fcb5-4143-ac33-71f456340842">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Philosopher" isDefault="true" fontName="Trebuchet MS" fontSize="10" isPdfEmbedded="true"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="interestListInString" class="java.util.List"/>
+	<field name="title" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="8d15f454-07cc-42ea-ac42-4365ec7fb62b" mode="Opaque" x="0" y="0" width="370" height="20" forecolor="#EDBCD7" backcolor="#EDBCD7"/>
+			</rectangle>
+			<image>
+				<reportElement uuid="0839ab09-e7c8-43e9-81a5-01c838b0cb5c" x="0" y="0" width="30" height="20"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/section_title_image.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="1930ede2-21a4-4775-a231-05dffb99500e" positionType="FixRelativeToBottom" x="0" y="0" width="370" height="20" forecolor="#C51088"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="15" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Interests]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="29ccc911-371f-4315-9f8c-fac3dda255c2" x="2" y="24" width="16" height="10"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="5ac087c1-3df6-4e2b-9fc6-ed15e5138128" x="18" y="25" width="352" height="10" forecolor="#636466"/>
+				<textElement>
+					<font fontName="Trebuchet MS" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{interestListInString}.join(', ')]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

@@ -1,0 +1,215 @@
+/*
+    Description: 	Form Framework Pro
+    Author: 		InsideLab
+    Version: 		1.0
+*/
+
+/*	--------------------------------------------------
+	:: Note: Design for a width of 768px
+	-------------------------------------------------- */
+
+    @media only screen and (min-width: 768px) and (max-width: 959px) {
+
+		.container,.modal1{ width:768px; }
+		
+	}
+
+/*	--------------------------------------------------
+	:: Note: Design for a width of 480px
+	-------------------------------------------------- */
+.centered {
+    top: 50%;
+    left: 50%;
+    margin-top: -300px;
+    margin-left:-400px;
+}
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+        
+		.modal1 { width:420px; left:50%; margin-left:-210px; }
+		.container{ width:420px !important; }
+		.grid-container .column-one,
+		.grid-container .column-two,
+		.grid-container .column-three,
+		.grid-container .column-four,
+		.grid-container .column-five,
+		.grid-container .column-six,
+		.grid-container .column-seven,
+		.grid-container .column-eight,
+		.grid-container .column-nine,
+		.grid-container .column-ten,
+		.grid-container .column-eleven,
+		.grid-container .column-twelve { width:98%; }
+		
+		.form .header { 
+		    text-align:center; 
+		}
+		
+		.form .header h4 { 
+		    line-height:22px; 
+		}
+		
+		.form .header a { 
+		    float:none;
+		}
+		
+		.close {
+		    display:block;
+			float:none;
+			margin-top:10px;
+			text-align:center;
+		}
+		
+		.form .sub-header-one,
+		.form .sub-header-two,
+		.form .sub-header-three,
+		.form .sub-header-four,
+		.form .sub-header-five{ 
+			text-align:center;
+		}
+		
+		.form .sub-header-one h4,
+		.form .sub-header-two h4,
+		.form .sub-header-three h4,
+		.form .sub-header-four h4,
+		.form .sub-header-five h4{ 
+			line-height:22px;
+			margin:10px 0 5px 0;
+		}
+		
+		.form .sub-header-three img,
+		.form .sub-header-five img{ 
+			margin:5px 0;
+		}
+		
+		.form .sub-header-one i,
+		.form .sub-header-two i,
+		.form .sub-header-three i,
+		.form .sub-header-four i,
+		.form .sub-header-five i{ 
+		    display:block;
+			float:none;
+			margin-top:5px;
+			padding-bottom:10px;
+			text-align:center;
+		}
+		
+		.form .checkbox-group label,
+		.form .radio-group label { 
+		    display:block;
+			text-align:left;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+		
+		.ui-datepicker { 
+			width:361px;
+		}
+		
+		.ui-datepicker .ui-datepicker-calendar a,
+		.ui-datepicker .ui-datepicker-calendar span {
+			width:43px;
+		}
+		
+		.form .box .box-header h4{
+			line-height:22px;
+		}
+
+    }
+
+
+/*	--------------------------------------------------
+	:: Note: Design for a width of 320px
+	-------------------------------------------------- */
+
+    @media only screen and (max-width: 479px) {
+
+		.modal1 { width:300px; left:50%; margin-left:-150px; }
+		.container { width:320px !important; }
+		.grid-container .column-one,
+		.grid-container .column-two,
+		.grid-container .column-three,
+		.grid-container .column-four,
+		.grid-container .column-five,
+		.grid-container .column-six,
+		.grid-container .column-seven,
+		.grid-container .column-eight,
+		.grid-container .column-nine,
+		.grid-container .column-ten,
+		.grid-container .column-eleven,
+		.grid-container .column-twelve { width:98%; }
+		
+		.form .header { 
+		    text-align:center; 
+		}
+		
+		.form .header h4 { 
+		    line-height:22px; 
+		}
+		
+		.form .header a { 
+		    float:none;
+		}
+		
+		.close {
+		    display:block;
+			float:none;
+			margin-top:10px;
+			text-align:center;
+		}
+		
+		.form .sub-header-one,
+		.form .sub-header-two,
+		.form .sub-header-three,
+		.form .sub-header-four,
+		.form .sub-header-five{ 
+			text-align:center;
+		}
+		
+		.form .sub-header-one h4,
+		.form .sub-header-two h4,
+		.form .sub-header-three h4,
+		.form .sub-header-four h4,
+		.form .sub-header-five h4{ 
+			line-height:22px;
+			margin:10px 0 5px 0;
+		}
+		
+		.form .sub-header-three img,
+		.form .sub-header-five img{ 
+			margin:5px 0;
+		}
+		
+		.form .sub-header-one i,
+		.form .sub-header-two i,
+		.form .sub-header-three i,
+		.form .sub-header-four i,
+		.form .sub-header-five i{ 
+		    display:block;
+			float:none;
+			margin-top:5px;
+			padding-bottom:10px;
+			text-align:center;
+		}
+		
+		.form .checkbox-group label,
+		.form .radio-group label { 
+		    display:block;
+			text-align:left;
+			margin-top:10px;
+			margin-bottom:10px;
+		}
+		
+		.ui-datepicker { 
+			width:262px;
+		}
+		
+		.ui-datepicker .ui-datepicker-calendar a,
+		.ui-datepicker .ui-datepicker-calendar span {
+			width:26px;
+		}
+		
+		.form .box .box-header h4{
+			line-height:22px;
+		}
+	
+    }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="skill" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="21ab1c06-dec5-435a-9ad6-b5b23e57518c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="skillSummary" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="hideRatingFromResume" class="java.lang.Boolean"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement uuid="eb37376b-ad74-41f1-8940-91deaf018164" x="0" y="15" width="220" height="1" forecolor="#1D5294"/>
+				<graphicElement>
+					<pen lineWidth="1.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d4eb8e96-bc9b-45c1-b1c0-f2fec10ed96e" x="0" y="0" width="340" height="15" forecolor="#1D5294"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEY SKILLS]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b1e83819-f4a8-450e-b2fa-4faec9163be8" positionType="Float" x="0" y="21" width="340" height="10" forecolor="#636466"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{skillSummary}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<image>
+				<reportElement uuid="b9e47c75-eaa6-4434-a2d8-b6985c84cda1" x="3" y="2" width="8" height="9"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/dot_bg.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="4446b02c-89dd-401c-8aff-4b45ec048f28" positionType="Float" x="18" y="2" width="210" height="10" forecolor="#818181"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="238" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[$F{hideRatingFromResume} == false]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="270" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[($F{rate} == "Sufficient" || $F{rate} == "Proficient" || $F{rate} == "Expert") && ($F{hideRatingFromResume} == false)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="286" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[($F{rate} == "Proficient" || $F{rate} == "Expert") && ($F{hideRatingFromResume} == false)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="254" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[($F{rate} == "Improver" || $F{rate} == "Sufficient" || $F{rate} == "Proficient" || $F{rate} == "Expert") && ($F{hideRatingFromResume} == false)]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="050cd5ec-3e41-4753-885a-6f407e1f6bf5" x="302" y="2" width="10" height="10">
+					<printWhenExpression><![CDATA[$F{rate} == "Expert" && $F{hideRatingFromResume} == false]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/star-on.png"]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="10" bottomMargin="0" uuid="57cd769e-896d-4b65-9ade-a81ddccb4b4d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fullName" class="java.lang.String"/>
+	<parameter name="phone1" class="java.lang.String"/>
+	<parameter name="phone2" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="userImagePathInSubReport" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     address.`address1` AS address_address1,
+     address.`address2` AS address_address2,
+     address.`city` AS address_city,
+     address.`country_id` AS address_country_id,
+     address.`county` AS address_county,
+     address.`house_number` AS address_house_number,
+     address.`state` AS address_state,
+     address.`street` AS address_street,
+     address.`zip` AS address_zip,
+     personal_detail.`email` AS personal_detail_email,
+     personal_detail.`first_name` AS personal_detail_first_name,
+     personal_detail.`last_name` AS personal_detail_last_name,
+     personal_detail.`phone1_id` AS personal_detail_phone1_id,
+     personal_detail.`phone2_id` AS personal_detail_phone2_id,
+     personal_detail.`status` AS personal_detail_status,
+     personal_detail.`title` AS personal_detail_title,
+     resume.`website` AS resume_website,
+     resume.`career_profile` AS resume_career_profile
+FROM
+     `address` address,
+     `personal_detail` personal_detail,
+     `resume` resume]]>
+	</queryString>
+	<field name="careerProfile" class="java.lang.String"/>
+	<field name="website" class="java.lang.String"/>
+	<title>
+		<band height="132" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="2c53ab3f-b159-4e54-a93e-06e7f7950b3d" positionType="Float" x="110" y="40" width="148" height="18" forecolor="#2424ED" backcolor="#FFFFFF"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{website}.replaceAll( "http://", "" )]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="7b0d10ef-7253-48fb-aa31-507cf75a1145" positionType="Float" x="282" y="34" width="110" height="20" forecolor="#283234">
+					<printWhenExpression><![CDATA[!$P{phone1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $P{phone1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="b1e9d52c-c272-40fd-bf55-42cb023255da" positionType="Float" x="282" y="58" width="110" height="20" forecolor="#283234">
+					<printWhenExpression><![CDATA[!$P{phone2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $P{phone2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0ab66ca4-9aa2-416c-b431-27591d5cba4f" positionType="Float" x="417" y="30" width="94" height="100" forecolor="#283234"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="96e301b2-b56e-46b6-aab5-c64829c051f8" x="259" y="0" width="256" height="25" backcolor="#CFDAF1"/>
+				<graphicElement>
+					<pen lineStyle="Solid" lineColor="#FFFFFF"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="86ab2d8d-051a-49a5-bf4a-6803d4fb69d5" x="270" y="8" width="100" height="14"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contact]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="f9e907d0-e5df-4a79-9d44-3a50746d3e59" x="265" y="35" width="9" height="9">
+					<printWhenExpression><![CDATA[!$P{phone1}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/phone-1.gif"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="f9e907d0-e5df-4a79-9d44-3a50746d3e59" x="265" y="59" width="9" height="9">
+					<printWhenExpression><![CDATA[!$P{phone2}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/phone-1.gif"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="c6ebaac3-5ee4-4a81-a113-9ef921f105c6" x="265" y="84" width="9" height="10">
+					<printWhenExpression><![CDATA[!$P{email}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/mail-1.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b1e9d52c-c272-40fd-bf55-42cb023255da" positionType="Float" x="282" y="81" width="134" height="20" forecolor="#283234"/>
+				<textElement>
+					<font fontName="Arial" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $P{email}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="24c1cbb6-1b5b-4824-ae83-dccbc0388e2d" positionType="Float" mode="Transparent" x="260" y="25" width="254" height="105" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineColor="#CFDAF1"/>
+				</graphicElement>
+			</rectangle>
+			<image scaleImage="FillFrame" isUsingCache="true">
+				<reportElement uuid="1fedbec8-731c-456b-99ef-7477ca2cd933" x="0" y="7" width="99" height="113"/>
+				<imageExpression><![CDATA[$P{userImagePathInSubReport}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="e1229af3-2eb6-41ae-97e9-3af8b6a70089" x="0" y="1" width="256" height="1" forecolor="#CFDAF1"/>
+			</line>
+			<line>
+				<reportElement uuid="e1229af3-2eb6-41ae-97e9-3af8b6a70089" x="0" y="130" width="256" height="1" forecolor="#CFDAF1"/>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b373d815-22ed-4489-8b92-2ac7e3f215aa" positionType="Float" x="110" y="25" width="148" height="15" forecolor="#EA8522"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{careerProfile}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="672155ad-36d0-41a2-9495-dd362dc90382" positionType="Float" x="110" y="7" width="148" height="18" forecolor="#283234"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fullName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

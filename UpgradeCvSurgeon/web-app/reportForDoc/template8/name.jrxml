@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="name" language="groovy" pageWidth="515" pageHeight="842" columnWidth="515" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="f7b255d8-69a6-4d04-b8bc-94416f387ec6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Sans_Normal" isDefault="true" fontName="Trebuchet MS" fontSize="12" pdfEncoding="Cp1252" isPdfEmbedded="true"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     personal_detail.`first_name` AS firstName,
+     personal_detail.`last_name` AS lastName
+FROM
+     `personal_detail` personal_detail]]>
+	</queryString>
+	<field name="firstName" class="java.lang.String"/>
+	<field name="lastName" class="java.lang.String"/>
+	<title>
+		<band height="110" splitType="Stretch">
+			<frame>
+				<reportElement uuid="96d87c27-930c-4eda-9b1a-549a866ab921" x="10" y="23" width="535" height="87" forecolor="#E7E7E7"/>
+				<box>
+					<topPen lineWidth="2.0" lineStyle="Solid"/>
+					<leftPen lineWidth="2.0" lineStyle="Solid"/>
+					<rightPen lineWidth="2.0" lineStyle="Solid"/>
+				</box>
+			</frame>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="90b2cdd8-c055-4f43-ab66-9a0df34885db" x="11" y="0" width="69" height="110"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_left.gif"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="115b5258-9e49-4e19-8818-0de35a783306" x="272" y="0" width="67" height="110"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_right_bg.gif"]]></imageExpression>
+			</image>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="16a876a9-05ba-4b06-8d74-6d93c7101239" mode="Transparent" x="75" y="0" width="201" height="110"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/title_bg.gif"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="657c83d9-857e-408a-b436-f9ba105fb2c1" stretchType="RelativeToBandHeight" x="56" y="50" width="247" height="27" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="20" isBold="true" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{firstName} + " " + $F{lastName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="04287d38-baf2-4566-9c4a-8374407017c0" x="56" y="30" width="247" height="20" forecolor="#FFFFFF"/>
+				<textElement textAlignment="Center">
+					<font fontName="Trebuchet MS" size="12"/>
+				</textElement>
+				<text><![CDATA[Curriculum Vitae]]></text>
+			</staticText>
+		</band>
+	</title>
+</jasperReport>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="language" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="10" bottomMargin="0" scriptletClass="com.cvsurgeon.RotateTextScriptlet" uuid="8fc91ee1-1869-4f3d-a9a1-ac2d30c5a596">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="languageInString" class="java.lang.String"/>
+	<parameter name="imagePathInSubreport" class="java.lang.String"/>
+	<parameter name="languageRatingInString" class="java.lang.String"/>
+	<field name="language.name" class="java.lang.String"/>
+	<field name="rating" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="83" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement uuid="25c31a32-0ae2-4227-8ad6-afecf687047c" stretchType="RelativeToBandHeight" x="9" y="0" width="520" height="79"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/content.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement uuid="b3eebd06-9622-49f7-a0b7-793a489fe1f8" positionType="FixRelativeToBottom" x="-4" y="-3" width="60" height="86"/>
+				<imageExpression><![CDATA[$P{imagePathInSubreport} + "/languages.png"]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="38af80ef-4866-49a2-8db5-f2b485a6116a" x="56" y="3" width="249" height="70" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{languageInString}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="38af80ef-4866-49a2-8db5-f2b485a6116a" x="305" y="3" width="194" height="70" forecolor="#FFFFFF"/>
+				<textElement markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{languageRatingInString}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

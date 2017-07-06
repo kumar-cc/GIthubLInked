@@ -1,0 +1,165 @@
+.wrapper h1>a img{
+    margin-right:0px !important;
+}
+
+.login .wrapper {
+    top: 41%;
+}
+
+.dialog_footer{
+     margin-top: 50px;
+    height: 10px;
+}
+
+.icon-nav > li > a i {
+    color: #ffffff;
+    font-size: 17px;
+}
+ul>li.lightred, .label-lightred {
+    background: #3a3a38;
+}
+/*
+
+#navigation .toggle-nav{
+    color: #3a3a38;
+}
+#navigation .main-nav > li > a {
+    color: #3a3a38;
+}*/
+.big_icon{
+    font-size: 18px;
+    color: #3a3a38;
+}
+
+
+.hero-unit p {
+    font-size: 18px;
+    font-weight: 200;
+    line-height: 27px;
+    margin: 5px 0 15px;
+}
+.pull-left {
+    float: left;
+}
+
+.hero-unit .share_buttons {
+    border-radius: 4px 4px 4px 4px;
+    float: right;
+    height: 38px;
+    margin-top: 0;
+    padding-left: 1px;
+    padding-right: 10px;
+    padding-top: 10px;
+    width: 179px;
+}
+
+.btn-twitter {
+    background-color: #1C95D0;
+    background-image: linear-gradient(to bottom, #2DADDC, #0271BF);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 12px;
+    text-align: center;
+}
+
+.btn-facebook {
+
+    /*background-color: #2B4B90;*/
+    /*background-image: linear-gradient(to bottom, #3B5998, #133783);*/
+    background-repeat: repeat-x;
+    /*border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);*/
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    /*border-style: solid;*/
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    /*padding: 4px 12px;*/
+    text-align: center;
+}
+
+.btn-linkedin {
+
+    background-color: #60A9CE;
+    background-image: linear-gradient(to bottom, #73B8DB, #4393BB);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #FFFFFF;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-radius: 4px 4px 4px 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 4px 12px;
+    text-align: center;
+}
+
+#inbox, #sent, #trash{
+    min-height: 250px;
+}
+
+.activeResume{
+
+    background: #4f86f7;
+}
+
+.box-section{
+   margin-bottom: 20px;
+}
+
+.avatar{
+    float: left;
+    padding-right: 20px;
+}
+
+.news-text{
+    float: left;
+}
+.timeline > li .timeline-content .left .icon{
+    margin-top: -10px;
+}
+
+.timeline > li {
+    border-bottom: 2px dotted #DDDDDD;
+    padding: 13px 0 7px;
+    position: relative;
+}
+
+.popover{
+    position: absolute;
+    width: 200px;
+    z-index: 9999   ;
+}
